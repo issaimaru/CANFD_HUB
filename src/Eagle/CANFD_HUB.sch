@@ -661,6 +661,48 @@ Low profile connectors, straight&lt;p&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="MOUNT-HOLE3.2(NORESIST)">
+<packages>
+<package name="3,2" urn="urn:adsk.eagle:footprint:14246/1" locally_modified="yes">
+<description>&lt;b&gt;MOUNTING HOLE&lt;/b&gt; 3.2 mm with drill center</description>
+<wire x1="-2.159" y1="0" x2="0" y2="-2.159" width="2.4892" layer="51" curve="90" cap="flat"/>
+<wire x1="0" y1="2.159" x2="2.159" y2="0" width="2.4892" layer="51" curve="-90" cap="flat"/>
+<circle x="0" y="0" radius="0.762" width="0.4572" layer="51"/>
+<hole x="0" y="0" drill="3.2"/>
+<pad name="P$1" x="0" y="0" drill="3.1968" diameter="7.0104"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MOUNT-HOLE">
+<wire x1="0" y1="1.27" x2="1.27" y2="0" width="1.524" layer="94" curve="-90" cap="flat"/>
+<wire x1="-1.27" y1="0" x2="0" y2="-1.27" width="1.524" layer="94" curve="90" cap="flat"/>
+<wire x1="-0.508" y1="0" x2="0.508" y2="0" width="0.0508" layer="94"/>
+<wire x1="0" y1="0.508" x2="0" y2="-0.508" width="0.0508" layer="94"/>
+<circle x="0" y="0" radius="2.032" width="0.0508" layer="94"/>
+<circle x="0" y="0" radius="0.508" width="0.0508" layer="94"/>
+<text x="2.032" y="0.5842" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.032" y="-2.4638" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="P$1" x="0" y="0" visible="off" length="point"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MOUNT-HOLE3.2(NORESIST)" prefix="H">
+<gates>
+<gate name="G$1" symbol="MOUNT-HOLE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="3,2">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -737,6 +779,11 @@ Low profile connectors, straight&lt;p&gt;
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R16" library="CR0603" deviceset="CR0603" device="" value="150"/>
 <part name="GND23" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="H3" library="MOUNT-HOLE3.2(NORESIST)" deviceset="MOUNT-HOLE3.2(NORESIST)" device=""/>
+<part name="H1" library="MOUNT-HOLE3.2(NORESIST)" deviceset="MOUNT-HOLE3.2(NORESIST)" device=""/>
+<part name="H2" library="MOUNT-HOLE3.2(NORESIST)" deviceset="MOUNT-HOLE3.2(NORESIST)" device=""/>
+<part name="H4" library="MOUNT-HOLE3.2(NORESIST)" deviceset="MOUNT-HOLE3.2(NORESIST)" device=""/>
+<part name="GND24" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -899,6 +946,23 @@ Low profile connectors, straight&lt;p&gt;
 <attribute name="VALUE" x="212.344" y="103.378" size="0.762" layer="96" rot="R270"/>
 </instance>
 <instance part="GND23" gate="1" x="213.36" y="93.98" smashed="yes"/>
+<instance part="H3" gate="G$1" x="12.7" y="30.48" smashed="yes">
+<attribute name="NAME" x="14.732" y="31.0642" size="1.778" layer="95"/>
+<attribute name="VALUE" x="14.732" y="28.0162" size="1.778" layer="96"/>
+</instance>
+<instance part="H1" gate="G$1" x="12.7" y="45.72" smashed="yes">
+<attribute name="NAME" x="14.732" y="46.3042" size="1.778" layer="95"/>
+<attribute name="VALUE" x="14.732" y="43.2562" size="1.778" layer="96"/>
+</instance>
+<instance part="H2" gate="G$1" x="12.7" y="38.1" smashed="yes">
+<attribute name="NAME" x="14.732" y="38.6842" size="1.778" layer="95"/>
+<attribute name="VALUE" x="14.732" y="35.6362" size="1.778" layer="96"/>
+</instance>
+<instance part="H4" gate="G$1" x="12.7" y="22.86" smashed="yes">
+<attribute name="NAME" x="14.732" y="23.4442" size="1.778" layer="95"/>
+<attribute name="VALUE" x="14.732" y="20.3962" size="1.778" layer="96"/>
+</instance>
+<instance part="GND24" gate="1" x="22.86" y="15.24" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -915,12 +979,14 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="RJ45_1" gate="G$1" pin="7"/>
 <wire x1="17.78" y1="124.46" x2="43.18" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="124.46" x2="43.18" y2="134.62" width="0.1524" layer="91"/>
+<label x="15.24" y="132.08" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+1" gate="1" pin="+5V"/>
 <wire x1="71.12" y1="157.48" x2="71.12" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="RIGHT"/>
 <wire x1="71.12" y1="154.94" x2="68.58" y2="154.94" width="0.1524" layer="91"/>
+<label x="71.12" y="160.02" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+2" gate="1" pin="+5V"/>
@@ -933,12 +999,14 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="RJ45_2" gate="G$1" pin="7"/>
 <wire x1="81.28" y1="124.46" x2="106.68" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="124.46" x2="106.68" y2="134.62" width="0.1524" layer="91"/>
+<label x="78.74" y="132.08" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <wire x1="134.62" y1="157.48" x2="134.62" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="RIGHT"/>
 <wire x1="134.62" y1="154.94" x2="132.08" y2="154.94" width="0.1524" layer="91"/>
+<label x="132.08" y="160.02" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
@@ -951,12 +1019,14 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="RJ45_3" gate="G$1" pin="7"/>
 <wire x1="149.86" y1="124.46" x2="175.26" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="124.46" x2="175.26" y2="134.62" width="0.1524" layer="91"/>
+<label x="147.32" y="132.08" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+5" gate="1" pin="+5V"/>
 <wire x1="203.2" y1="157.48" x2="203.2" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="RIGHT"/>
 <wire x1="203.2" y1="154.94" x2="200.66" y2="154.94" width="0.1524" layer="91"/>
+<label x="200.66" y="160.02" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+6" gate="1" pin="+5V"/>
@@ -969,12 +1039,14 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="RJ45_4" gate="G$1" pin="7"/>
 <wire x1="213.36" y1="124.46" x2="238.76" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="238.76" y1="124.46" x2="238.76" y2="134.62" width="0.1524" layer="91"/>
+<label x="210.82" y="132.08" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+7" gate="1" pin="+5V"/>
 <wire x1="266.7" y1="157.48" x2="266.7" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="RIGHT"/>
 <wire x1="266.7" y1="154.94" x2="264.16" y2="154.94" width="0.1524" layer="91"/>
+<label x="264.16" y="160.02" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
@@ -994,6 +1066,7 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="71.12" y1="101.6" x2="71.12" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="RIGHT"/>
 <wire x1="71.12" y1="99.06" x2="68.58" y2="99.06" width="0.1524" layer="91"/>
+<label x="68.58" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+11" gate="1" pin="+5V"/>
@@ -1006,12 +1079,14 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="RJ45_6" gate="G$1" pin="7"/>
 <wire x1="81.28" y1="68.58" x2="106.68" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="68.58" x2="106.68" y2="78.74" width="0.1524" layer="91"/>
+<label x="78.74" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+12" gate="1" pin="+5V"/>
 <wire x1="134.62" y1="101.6" x2="134.62" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="RIGHT"/>
 <wire x1="134.62" y1="99.06" x2="132.08" y2="99.06" width="0.1524" layer="91"/>
+<label x="132.08" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+13" gate="1" pin="+5V"/>
@@ -1024,12 +1099,14 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="RJ45_7" gate="G$1" pin="7"/>
 <wire x1="149.86" y1="68.58" x2="175.26" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="68.58" x2="175.26" y2="78.74" width="0.1524" layer="91"/>
+<label x="147.32" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+14" gate="1" pin="+5V"/>
 <wire x1="203.2" y1="101.6" x2="203.2" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="RIGHT"/>
 <wire x1="203.2" y1="99.06" x2="200.66" y2="99.06" width="0.1524" layer="91"/>
+<label x="200.66" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+15" gate="1" pin="+5V"/>
@@ -1042,12 +1119,14 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="RJ45_8" gate="G$1" pin="7"/>
 <wire x1="213.36" y1="68.58" x2="238.76" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="238.76" y1="68.58" x2="238.76" y2="78.74" width="0.1524" layer="91"/>
+<label x="210.82" y="76.2" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="P+16" gate="1" pin="+5V"/>
 <wire x1="266.7" y1="101.6" x2="266.7" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="RIGHT"/>
 <wire x1="266.7" y1="99.06" x2="264.16" y2="99.06" width="0.1524" layer="91"/>
+<label x="264.16" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="SV1" gate="G$1" pin="2"/>
@@ -1065,12 +1144,14 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="30.48" y1="134.62" x2="30.48" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="121.92" x2="45.72" y2="121.92" width="0.1524" layer="91"/>
 <junction x="45.72" y="121.92"/>
+<label x="43.18" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_1" gate="G$1" pin="LED2_K"/>
 <wire x1="50.8" y1="157.48" x2="55.88" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="55.88" y1="157.48" x2="55.88" y2="152.4" width="0.1524" layer="91"/>
+<label x="53.34" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_2" gate="G$1" pin="8"/>
@@ -1081,12 +1162,14 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="93.98" y1="134.62" x2="93.98" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="121.92" x2="109.22" y2="121.92" width="0.1524" layer="91"/>
 <junction x="109.22" y="121.92"/>
+<label x="106.68" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_2" gate="G$1" pin="LED2_K"/>
 <wire x1="114.3" y1="157.48" x2="119.38" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="119.38" y1="157.48" x2="119.38" y2="152.4" width="0.1524" layer="91"/>
+<label x="116.84" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_3" gate="G$1" pin="8"/>
@@ -1097,12 +1180,14 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="162.56" y1="134.62" x2="162.56" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="121.92" x2="177.8" y2="121.92" width="0.1524" layer="91"/>
 <junction x="177.8" y="121.92"/>
+<label x="175.26" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_3" gate="G$1" pin="LED2_K"/>
 <wire x1="182.88" y1="157.48" x2="187.96" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="187.96" y1="157.48" x2="187.96" y2="152.4" width="0.1524" layer="91"/>
+<label x="185.42" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_4" gate="G$1" pin="8"/>
@@ -1113,12 +1198,14 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="226.06" y1="134.62" x2="226.06" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="121.92" x2="241.3" y2="121.92" width="0.1524" layer="91"/>
 <junction x="241.3" y="121.92"/>
+<label x="238.76" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_4" gate="G$1" pin="LED2_K"/>
 <wire x1="246.38" y1="157.48" x2="251.46" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="251.46" y1="157.48" x2="251.46" y2="152.4" width="0.1524" layer="91"/>
+<label x="248.92" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_5" gate="G$1" pin="8"/>
@@ -1136,6 +1223,7 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="50.8" y1="101.6" x2="55.88" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="55.88" y1="101.6" x2="55.88" y2="96.52" width="0.1524" layer="91"/>
+<label x="53.34" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_6" gate="G$1" pin="8"/>
@@ -1153,6 +1241,7 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="114.3" y1="101.6" x2="119.38" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="119.38" y1="101.6" x2="119.38" y2="96.52" width="0.1524" layer="91"/>
+<label x="116.84" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_7" gate="G$1" pin="8"/>
@@ -1163,12 +1252,14 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="162.56" y1="78.74" x2="162.56" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="66.04" x2="177.8" y2="66.04" width="0.1524" layer="91"/>
 <junction x="177.8" y="66.04"/>
+<label x="175.26" y="58.42" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_7" gate="G$1" pin="LED2_K"/>
 <wire x1="182.88" y1="101.6" x2="187.96" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 <wire x1="187.96" y1="101.6" x2="187.96" y2="96.52" width="0.1524" layer="91"/>
+<label x="185.42" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_8" gate="G$1" pin="8"/>
@@ -1179,229 +1270,94 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="226.06" y1="78.74" x2="226.06" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="66.04" x2="241.3" y2="66.04" width="0.1524" layer="91"/>
 <junction x="241.3" y="66.04"/>
+<label x="238.76" y="58.42" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="RJ45_8" gate="G$1" pin="LED2_K"/>
 <wire x1="246.38" y1="101.6" x2="251.46" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="GND15" gate="1" pin="GND"/>
 <wire x1="251.46" y1="101.6" x2="251.46" y2="96.52" width="0.1524" layer="91"/>
+<label x="248.92" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="17.78" y1="152.4" x2="17.78" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="RJ45_1" gate="G$1" pin="LED1_K"/>
 <wire x1="17.78" y1="154.94" x2="22.86" y2="154.94" width="0.1524" layer="91"/>
+<label x="15.24" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND17" gate="1" pin="GND"/>
 <wire x1="81.28" y1="152.4" x2="81.28" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="154.94" x2="86.36" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="RJ45_2" gate="G$1" pin="LED1_K"/>
+<label x="78.74" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND18" gate="1" pin="GND"/>
 <wire x1="149.86" y1="152.4" x2="149.86" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="154.94" x2="154.94" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="RJ45_3" gate="G$1" pin="LED1_K"/>
+<label x="147.32" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND19" gate="1" pin="GND"/>
 <wire x1="213.36" y1="152.4" x2="213.36" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="154.94" x2="218.44" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="RJ45_4" gate="G$1" pin="LED1_K"/>
+<label x="210.82" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND20" gate="1" pin="GND"/>
 <wire x1="17.78" y1="96.52" x2="17.78" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="99.06" x2="22.86" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="RJ45_5" gate="G$1" pin="LED1_K"/>
+<label x="15.24" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND21" gate="1" pin="GND"/>
 <wire x1="81.28" y1="96.52" x2="81.28" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="99.06" x2="86.36" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="RJ45_6" gate="G$1" pin="LED1_K"/>
+<label x="78.74" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND22" gate="1" pin="GND"/>
 <wire x1="149.86" y1="96.52" x2="149.86" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="99.06" x2="154.94" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="RJ45_7" gate="G$1" pin="LED1_K"/>
+<label x="147.32" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="GND23" gate="1" pin="GND"/>
 <wire x1="213.36" y1="96.52" x2="213.36" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="213.36" y1="99.06" x2="218.44" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="RJ45_8" gate="G$1" pin="LED1_K"/>
+<label x="210.82" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="SV1" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="25.4" x2="88.9" y2="25.4" width="0.1524" layer="91"/>
 <label x="81.28" y="25.4" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="CAN_L" class="0">
 <segment>
-<pinref part="RJ45_1" gate="G$1" pin="3"/>
-<wire x1="33.02" y1="134.62" x2="33.02" y2="127" width="0.1524" layer="91"/>
-<label x="33.02" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_1" gate="G$1" pin="4"/>
-<wire x1="35.56" y1="134.62" x2="35.56" y2="127" width="0.1524" layer="91"/>
-<label x="35.56" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_2" gate="G$1" pin="3"/>
-<wire x1="96.52" y1="134.62" x2="96.52" y2="127" width="0.1524" layer="91"/>
-<label x="96.52" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_2" gate="G$1" pin="4"/>
-<wire x1="99.06" y1="134.62" x2="99.06" y2="127" width="0.1524" layer="91"/>
-<label x="99.06" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_3" gate="G$1" pin="3"/>
-<wire x1="165.1" y1="134.62" x2="165.1" y2="127" width="0.1524" layer="91"/>
-<label x="165.1" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_3" gate="G$1" pin="4"/>
-<wire x1="167.64" y1="134.62" x2="167.64" y2="127" width="0.1524" layer="91"/>
-<label x="167.64" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_4" gate="G$1" pin="3"/>
-<wire x1="228.6" y1="134.62" x2="228.6" y2="127" width="0.1524" layer="91"/>
-<label x="228.6" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_4" gate="G$1" pin="4"/>
-<wire x1="231.14" y1="134.62" x2="231.14" y2="127" width="0.1524" layer="91"/>
-<label x="231.14" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_5" gate="G$1" pin="3"/>
-<wire x1="33.02" y1="78.74" x2="33.02" y2="71.12" width="0.1524" layer="91"/>
-<label x="33.02" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_5" gate="G$1" pin="4"/>
-<wire x1="35.56" y1="78.74" x2="35.56" y2="71.12" width="0.1524" layer="91"/>
-<label x="35.56" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_6" gate="G$1" pin="3"/>
-<wire x1="96.52" y1="78.74" x2="96.52" y2="71.12" width="0.1524" layer="91"/>
-<label x="96.52" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_6" gate="G$1" pin="4"/>
-<wire x1="99.06" y1="78.74" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
-<label x="99.06" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_7" gate="G$1" pin="3"/>
-<wire x1="165.1" y1="78.74" x2="165.1" y2="71.12" width="0.1524" layer="91"/>
-<label x="165.1" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_7" gate="G$1" pin="4"/>
-<wire x1="167.64" y1="78.74" x2="167.64" y2="71.12" width="0.1524" layer="91"/>
-<label x="167.64" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_8" gate="G$1" pin="3"/>
-<wire x1="228.6" y1="78.74" x2="228.6" y2="71.12" width="0.1524" layer="91"/>
-<label x="228.6" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_8" gate="G$1" pin="4"/>
-<wire x1="231.14" y1="78.74" x2="231.14" y2="71.12" width="0.1524" layer="91"/>
-<label x="231.14" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-</net>
-<net name="CAN_H" class="0">
-<segment>
-<pinref part="RJ45_1" gate="G$1" pin="5"/>
-<wire x1="38.1" y1="134.62" x2="38.1" y2="127" width="0.1524" layer="91"/>
-<label x="38.1" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_1" gate="G$1" pin="6"/>
-<wire x1="40.64" y1="134.62" x2="40.64" y2="127" width="0.1524" layer="91"/>
-<label x="40.64" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_2" gate="G$1" pin="5"/>
-<wire x1="101.6" y1="134.62" x2="101.6" y2="127" width="0.1524" layer="91"/>
-<label x="101.6" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_2" gate="G$1" pin="6"/>
-<wire x1="104.14" y1="134.62" x2="104.14" y2="127" width="0.1524" layer="91"/>
-<label x="104.14" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_3" gate="G$1" pin="5"/>
-<wire x1="170.18" y1="134.62" x2="170.18" y2="127" width="0.1524" layer="91"/>
-<label x="170.18" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_3" gate="G$1" pin="6"/>
-<wire x1="172.72" y1="134.62" x2="172.72" y2="127" width="0.1524" layer="91"/>
-<label x="172.72" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_4" gate="G$1" pin="5"/>
-<wire x1="233.68" y1="134.62" x2="233.68" y2="127" width="0.1524" layer="91"/>
-<label x="233.68" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_4" gate="G$1" pin="6"/>
-<wire x1="236.22" y1="134.62" x2="236.22" y2="127" width="0.1524" layer="91"/>
-<label x="236.22" y="127" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_5" gate="G$1" pin="5"/>
-<wire x1="38.1" y1="78.74" x2="38.1" y2="71.12" width="0.1524" layer="91"/>
-<label x="38.1" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_5" gate="G$1" pin="6"/>
-<wire x1="40.64" y1="78.74" x2="40.64" y2="71.12" width="0.1524" layer="91"/>
-<label x="40.64" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_6" gate="G$1" pin="5"/>
-<wire x1="101.6" y1="78.74" x2="101.6" y2="71.12" width="0.1524" layer="91"/>
-<label x="101.6" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_6" gate="G$1" pin="6"/>
-<wire x1="104.14" y1="78.74" x2="104.14" y2="71.12" width="0.1524" layer="91"/>
-<label x="104.14" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_7" gate="G$1" pin="5"/>
-<wire x1="170.18" y1="78.74" x2="170.18" y2="71.12" width="0.1524" layer="91"/>
-<label x="170.18" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_7" gate="G$1" pin="6"/>
-<wire x1="172.72" y1="78.74" x2="172.72" y2="71.12" width="0.1524" layer="91"/>
-<label x="172.72" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_8" gate="G$1" pin="5"/>
-<wire x1="233.68" y1="78.74" x2="233.68" y2="71.12" width="0.1524" layer="91"/>
-<label x="233.68" y="71.12" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="RJ45_8" gate="G$1" pin="6"/>
-<wire x1="236.22" y1="78.74" x2="236.22" y2="71.12" width="0.1524" layer="91"/>
-<label x="236.22" y="71.12" size="1.778" layer="95" rot="R90"/>
+<pinref part="H4" gate="G$1" pin="P$1"/>
+<wire x1="12.7" y1="22.86" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="GND24" gate="1" pin="GND"/>
+<wire x1="22.86" y1="22.86" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="H3" gate="G$1" pin="P$1"/>
+<wire x1="12.7" y1="30.48" x2="22.86" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="30.48" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
+<junction x="22.86" y="22.86"/>
+<pinref part="H2" gate="G$1" pin="P$1"/>
+<wire x1="12.7" y1="38.1" x2="22.86" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="38.1" x2="22.86" y2="30.48" width="0.1524" layer="91"/>
+<junction x="22.86" y="30.48"/>
+<pinref part="H1" gate="G$1" pin="P$1"/>
+<wire x1="12.7" y1="45.72" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="45.72" x2="22.86" y2="38.1" width="0.1524" layer="91"/>
+<junction x="22.86" y="38.1"/>
+<label x="20.32" y="12.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -1474,9 +1430,9 @@ Low profile connectors, straight&lt;p&gt;
 <label x="10.16" y="167.64" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="G$1" pin="10"/>
-<wire x1="66.04" y1="35.56" x2="58.42" y2="35.56" width="0.1524" layer="91"/>
-<label x="58.42" y="35.56" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="4"/>
+<wire x1="66.04" y1="27.94" x2="58.42" y2="27.94" width="0.1524" layer="91"/>
+<label x="58.42" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -1535,9 +1491,9 @@ Low profile connectors, straight&lt;p&gt;
 <label x="73.66" y="167.64" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="G$1" pin="9"/>
-<wire x1="81.28" y1="35.56" x2="88.9" y2="35.56" width="0.1524" layer="91"/>
-<label x="81.28" y="35.56" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="6"/>
+<wire x1="66.04" y1="30.48" x2="58.42" y2="30.48" width="0.1524" layer="91"/>
+<label x="58.42" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED3" class="0">
@@ -1559,9 +1515,9 @@ Low profile connectors, straight&lt;p&gt;
 <label x="205.74" y="167.64" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="G$1" pin="7"/>
-<wire x1="81.28" y1="33.02" x2="88.9" y2="33.02" width="0.1524" layer="91"/>
-<label x="81.28" y="33.02" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="10"/>
+<wire x1="66.04" y1="35.56" x2="58.42" y2="35.56" width="0.1524" layer="91"/>
+<label x="58.42" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED5" class="0">
@@ -1571,9 +1527,9 @@ Low profile connectors, straight&lt;p&gt;
 <label x="10.16" y="111.76" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="G$1" pin="6"/>
-<wire x1="66.04" y1="30.48" x2="58.42" y2="30.48" width="0.1524" layer="91"/>
-<label x="58.42" y="30.48" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="9"/>
+<wire x1="81.28" y1="35.56" x2="88.9" y2="35.56" width="0.1524" layer="91"/>
+<label x="81.28" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED6" class="0">
@@ -1583,9 +1539,9 @@ Low profile connectors, straight&lt;p&gt;
 <label x="73.66" y="111.76" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="G$1" pin="5"/>
-<wire x1="81.28" y1="30.48" x2="88.9" y2="30.48" width="0.1524" layer="91"/>
-<label x="81.28" y="30.48" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="7"/>
+<wire x1="81.28" y1="33.02" x2="88.9" y2="33.02" width="0.1524" layer="91"/>
+<label x="81.28" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED7" class="0">
@@ -1595,9 +1551,9 @@ Low profile connectors, straight&lt;p&gt;
 <label x="142.24" y="111.76" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="G$1" pin="4"/>
-<wire x1="66.04" y1="27.94" x2="58.42" y2="27.94" width="0.1524" layer="91"/>
-<label x="58.42" y="27.94" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="5"/>
+<wire x1="81.28" y1="30.48" x2="88.9" y2="30.48" width="0.1524" layer="91"/>
+<label x="81.28" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED8" class="0">
@@ -1610,6 +1566,170 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="SV1" gate="G$1" pin="3"/>
 <wire x1="81.28" y1="27.94" x2="88.9" y2="27.94" width="0.1524" layer="91"/>
 <label x="81.28" y="27.94" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CAN_L-" class="0">
+<segment>
+<pinref part="RJ45_5" gate="G$1" pin="3"/>
+<wire x1="33.02" y1="78.74" x2="33.02" y2="71.12" width="0.1524" layer="91"/>
+<label x="33.02" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_5" gate="G$1" pin="4"/>
+<wire x1="35.56" y1="78.74" x2="35.56" y2="71.12" width="0.1524" layer="91"/>
+<label x="35.56" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_6" gate="G$1" pin="3"/>
+<wire x1="96.52" y1="78.74" x2="96.52" y2="71.12" width="0.1524" layer="91"/>
+<label x="96.52" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_6" gate="G$1" pin="4"/>
+<wire x1="99.06" y1="78.74" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
+<label x="99.06" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_7" gate="G$1" pin="3"/>
+<wire x1="165.1" y1="78.74" x2="165.1" y2="71.12" width="0.1524" layer="91"/>
+<label x="165.1" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_7" gate="G$1" pin="4"/>
+<wire x1="167.64" y1="78.74" x2="167.64" y2="71.12" width="0.1524" layer="91"/>
+<label x="167.64" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_8" gate="G$1" pin="3"/>
+<wire x1="228.6" y1="78.74" x2="228.6" y2="71.12" width="0.1524" layer="91"/>
+<label x="228.6" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_8" gate="G$1" pin="4"/>
+<wire x1="231.14" y1="78.74" x2="231.14" y2="71.12" width="0.1524" layer="91"/>
+<label x="231.14" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_1" gate="G$1" pin="3"/>
+<wire x1="33.02" y1="134.62" x2="33.02" y2="127" width="0.1524" layer="91"/>
+<label x="33.02" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_1" gate="G$1" pin="4"/>
+<wire x1="35.56" y1="134.62" x2="35.56" y2="127" width="0.1524" layer="91"/>
+<label x="35.56" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_2" gate="G$1" pin="3"/>
+<wire x1="96.52" y1="134.62" x2="96.52" y2="127" width="0.1524" layer="91"/>
+<label x="96.52" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_2" gate="G$1" pin="4"/>
+<wire x1="99.06" y1="134.62" x2="99.06" y2="127" width="0.1524" layer="91"/>
+<label x="99.06" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_3" gate="G$1" pin="3"/>
+<wire x1="165.1" y1="134.62" x2="165.1" y2="127" width="0.1524" layer="91"/>
+<label x="165.1" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_3" gate="G$1" pin="4"/>
+<wire x1="167.64" y1="134.62" x2="167.64" y2="127" width="0.1524" layer="91"/>
+<label x="167.64" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_4" gate="G$1" pin="3"/>
+<wire x1="228.6" y1="134.62" x2="228.6" y2="127" width="0.1524" layer="91"/>
+<label x="228.6" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_4" gate="G$1" pin="4"/>
+<wire x1="231.14" y1="134.62" x2="231.14" y2="127" width="0.1524" layer="91"/>
+<label x="231.14" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="CAN_H+" class="0">
+<segment>
+<pinref part="RJ45_5" gate="G$1" pin="5"/>
+<wire x1="38.1" y1="78.74" x2="38.1" y2="71.12" width="0.1524" layer="91"/>
+<label x="38.1" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_5" gate="G$1" pin="6"/>
+<wire x1="40.64" y1="78.74" x2="40.64" y2="71.12" width="0.1524" layer="91"/>
+<label x="40.64" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_6" gate="G$1" pin="5"/>
+<wire x1="101.6" y1="78.74" x2="101.6" y2="71.12" width="0.1524" layer="91"/>
+<label x="101.6" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_6" gate="G$1" pin="6"/>
+<wire x1="104.14" y1="78.74" x2="104.14" y2="71.12" width="0.1524" layer="91"/>
+<label x="104.14" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_7" gate="G$1" pin="5"/>
+<wire x1="170.18" y1="78.74" x2="170.18" y2="71.12" width="0.1524" layer="91"/>
+<label x="170.18" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_7" gate="G$1" pin="6"/>
+<wire x1="172.72" y1="78.74" x2="172.72" y2="71.12" width="0.1524" layer="91"/>
+<label x="172.72" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_8" gate="G$1" pin="5"/>
+<wire x1="233.68" y1="78.74" x2="233.68" y2="71.12" width="0.1524" layer="91"/>
+<label x="233.68" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_8" gate="G$1" pin="6"/>
+<wire x1="236.22" y1="78.74" x2="236.22" y2="71.12" width="0.1524" layer="91"/>
+<label x="236.22" y="71.12" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_1" gate="G$1" pin="5"/>
+<wire x1="38.1" y1="134.62" x2="38.1" y2="127" width="0.1524" layer="91"/>
+<label x="38.1" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_1" gate="G$1" pin="6"/>
+<wire x1="40.64" y1="134.62" x2="40.64" y2="127" width="0.1524" layer="91"/>
+<label x="40.64" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_2" gate="G$1" pin="5"/>
+<wire x1="101.6" y1="134.62" x2="101.6" y2="127" width="0.1524" layer="91"/>
+<label x="101.6" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_2" gate="G$1" pin="6"/>
+<wire x1="104.14" y1="134.62" x2="104.14" y2="127" width="0.1524" layer="91"/>
+<label x="104.14" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_3" gate="G$1" pin="5"/>
+<wire x1="170.18" y1="134.62" x2="170.18" y2="127" width="0.1524" layer="91"/>
+<label x="170.18" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_3" gate="G$1" pin="6"/>
+<wire x1="172.72" y1="134.62" x2="172.72" y2="127" width="0.1524" layer="91"/>
+<label x="172.72" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_4" gate="G$1" pin="5"/>
+<wire x1="233.68" y1="134.62" x2="233.68" y2="127" width="0.1524" layer="91"/>
+<label x="233.68" y="127" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="RJ45_4" gate="G$1" pin="6"/>
+<wire x1="236.22" y1="134.62" x2="236.22" y2="127" width="0.1524" layer="91"/>
+<label x="236.22" y="127" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
